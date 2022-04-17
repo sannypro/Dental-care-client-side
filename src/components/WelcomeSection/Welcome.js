@@ -2,6 +2,7 @@ import React from 'react';
 import welcome from '../../Assets/Image/welcome.png'
 import './Welcome.css';
 import teethWhitening from '../../Assets/Image/teeth-whitening.png'
+import { Link } from 'react-router-dom';
 
 const Welcome = () => {
     return (
@@ -20,20 +21,48 @@ const Welcome = () => {
                 <h2>Make your dream smile a reality</h2>
                 <small>Call us or book your appointment today</small>
             </div>
-            <div>
-                <div className='text-center mt-5'>
+            <div >
+                <div className='text-center  mt-5'>
                     <small className='welcome-small'>Professional highly trained</small>
                     <h1>our services</h1>
                 </div>
-                <div className='container'>
-                    <div class="card">
-                        <img src={teethWhitening} class="card-img-top img-fluid" alt="..." />
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                <div className='row container justify-content-center card-container g-3'>
+
+                    <div className="container col-lg-4">
+                        <div className="card ">
+                            <img src={teethWhitening} className="card-img-top img-fluid" alt="..." />
+                            <div className="card-body">
+                                <h5 className="card-title">Card title</h5>
+                                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <Link to="checkout" className="btn btn-primary">Go somewhere</Link>
+                            </div>
                         </div>
                     </div>
+
+
+                    <div className="container col-lg-4">
+                        <div className="card ">
+                            <img src={teethWhitening} className="card-img-top img-fluid" alt="..." />
+                            <div className="card-body">
+                                <h5 className="card-title">Card title</h5>
+                                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <Link to="checkout" className="btn btn-primary">Go somewhere</Link>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div className="container col-lg-4">
+                        <div className="card ">
+                            <img src={teethWhitening} className="card-img-top img-fluid" alt="..." />
+                            <div className="card-body">
+                                <h5 className="card-title">Card title</h5>
+                                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <Link to="checkout" className="btn btn-primary">Go somewhere</Link>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </>
