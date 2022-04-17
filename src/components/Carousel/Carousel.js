@@ -31,22 +31,22 @@ const Carousel = () => {
             </section>
             <section>
                 <div className='d-flex justify-content-center  row carousel-card-container'>
-                    <div className='carousel-card col-lg-12  d-flex flex-column justify-content-center align-items-center py-5'>
+                    <div className='carousel-card  d-flex flex-column justify-content-center align-items-center py-5'>
                         <FontAwesomeIcon style={{ height: '30px' }} icon={faTooth} />
                         <h3>Root canals</h3>
                         <p className='text-center'>Our root canals procedures are very affordable with price from $200</p>
                     </div>
-                    <div className='carousel-card d-flex col-lg-12 flex-column justify-content-center align-items-center py-5'>
+                    <div className='carousel-card d-flex  flex-column justify-content-center align-items-center py-5'>
                         <FontAwesomeIcon style={{ height: '30px' }} icon={faTeethOpen} />
                         <h3>Root canals</h3>
                         <p className='text-center'>Our root canals procedures are very affordable with price from $200</p>
                     </div>
-                    <div className='carousel-card d-flex col-lg-12 flex-column justify-content-center align-items-center py-5'>
+                    <div className='carousel-card d-flex flex-column justify-content-center align-items-center py-5'>
                         <FontAwesomeIcon style={{ height: '30px' }} icon={faClock} />
                         <h3>Root canals</h3>
                         <p className='text-center'>Our root canals procedures are very affordable with price from $200</p>
                     </div>
-                    <div className='carousel-card d-flex col-lg-12 flex-column justify-content-center align-items-center py-5'>
+                    <div className='carousel-card d-flex  flex-column justify-content-center align-items-center py-5'>
                         <FontAwesomeIcon style={{ height: '30px' }} icon={faStethoscope} />
                         <h3>Root canals</h3>
                         <p className='text-center'>Our root canals procedures are very affordable with price from $200</p>

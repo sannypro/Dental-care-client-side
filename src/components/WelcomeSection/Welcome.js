@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const Welcome = () => {
     return (
         <>
-            <div className='row container align-items-center'>
+            <div className='row container align-items-center justify-content-center'>
                 <div className='col-lg-6 col-sm-12 '>
                     <img className='img-fluid' src={welcome} alt="" />
                 </div>

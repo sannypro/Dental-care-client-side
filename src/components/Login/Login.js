@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation, } from 'react-router-dom';
 import "./Login.css"
 import GoogleLogo from "../../Assets/Image/google.svg"
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
@@ -30,6 +30,13 @@ const Login = () => {
         signInWithEmailAndPassword(email, password)
 
     }
+
+    let location = useLocation();
+    let from = location.state?.from?.pathname || "/";
+    if (user) {
+        navigate(from, { replace: true })
+
+    }
     return (
         <div className='login-form-container'>
 
@@ -49,8 +56,8 @@ const Login = () => {
                         </div>
                     </div>
 
-                    <p style={{ color: 'red' }}>{hookError}</p>
-                    <p style={{ color: 'red' }}>{goolgeError}</p>
+                    <p style={{ color: 'red' }}>{hookError?.message}</p>
+                    <p style={{ color: 'red' }}>{goolgeError?.message}</p>
                     <button type='submit' className='auth-form-submit'>
                         Login
                     </button>
