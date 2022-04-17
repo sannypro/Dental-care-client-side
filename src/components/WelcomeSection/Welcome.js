@@ -1,6 +1,7 @@
 import React from 'react';
 import welcome from '../../Assets/Image/welcome.png'
-import './Welcome.css'
+import './Welcome.css';
+import teethWhitening from '../../Assets/Image/teeth-whitening.png'
 
 const Welcome = () => {
     return (
@@ -20,7 +21,20 @@ const Welcome = () => {
                 <small>Call us or book your appointment today</small>
             </div>
             <div>
-                <small>Professional highly trained</small>
+                <div className='text-center mt-5'>
+                    <small className='welcome-small'>Professional highly trained</small>
+                    <h1>our services</h1>
+                </div>
+                <div className='container'>
+                    <div class="card" style={{ width: '18rem' }}>
+                        <img src={teethWhitening} class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </>
     );
