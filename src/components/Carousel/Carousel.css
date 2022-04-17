@@ -2,6 +2,12 @@
     padding: 40px 60px;
 
     background-color: #08a0e4;
-    width: 30%;
+    width: 25%;
     color: white;
+}
+
+.bg-img {
+    background-image: url('/src/Assets/Image/bg-img.png');
+    background-repeat: no-repeat;
+    background-size: cover;
 }

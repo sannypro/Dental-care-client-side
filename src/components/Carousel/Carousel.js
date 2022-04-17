@@ -6,8 +6,8 @@ import './Carousel.css'
 const Carousel = () => {
     return (
         <div >
-            <section className='row align-items-center'>
-                <div className=' col-lg-6 p-5'>
+            <section className='row  bg-img align-items-center'>
+                <div className='col-lg-6 p-5'>
                     <h2 >
                         Professional and highly trined dental staff
                     </h2>
@@ -28,7 +28,9 @@ const Carousel = () => {
                         </div>
                     </div>
                 </div>
-                <div className='d-flex'>
+            </section>
+            <section>
+                <div className='d-flex row carousel-card-container'>
                     <div className='carousel-card  d-flex flex-column justify-content-center align-items-center py-5'>
                         <FontAwesomeIcon style={{ height: '30px' }} icon={faTooth} />
                         <h3>Root canals</h3>
