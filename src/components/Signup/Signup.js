@@ -2,11 +2,16 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import GoogleLogo from '../../Assets/Image/google.svg'
 import auth from '../../components/firebase.init';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSendEmailVerification } from 'react-firebase-hooks/auth';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { async } from '@firebase/util';
+import { Button, Col, Row, Toast } from 'react-bootstrap';
 
 const Signup = () => {
     const [signInWithGoogle, googleUser, googleLoading, goolgeError] = useSignInWithGoogle(auth);
+    const [sendEmailVerification, sending] = useSendEmailVerification(
+        auth
+    );
     const navigate = useNavigate();
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -17,7 +22,7 @@ const Signup = () => {
         user,
         loading,
         hookError,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const handleEmailChange = e => {
         setEmail(e.target.value)
     };
@@ -27,7 +32,7 @@ const Signup = () => {
     const handleConfirmPasschange = e => {
         setConfirmPass(e.target.value)
     };
-    const handleSubmit = e => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         if (password !== comfirmPass) {
             setError('two password mismacthed')
@@ -38,11 +43,42 @@ const Signup = () => {
             setError('')
         }
         createUserWithEmailAndPassword(email, password)
+        await sendEmailVerification()
+
+
+
     }
+    const [showA, setShowA] = useState(true);
+    const [showB, setShowB] = useState(true);
+
+    const toggleShowA = () => setShowA(!showA);
+    const toggleShowB = () => setShowB(!showB);
 
 
     return (
-        <div>
+        <div className=' position-relative'>
+            {
+                user && <div className='position-absolute top-50 end-0 translate-middle-y'>
+                    <Row>
+                        <Col md={6} className="mb-2">
+
+                            <Toast show={showA} onClose={toggleShowA}>
+                                <Toast.Header>
+                                    <img
+                                        src="holder.js/20x20?text=%20"
+                                        className="rounded me-2"
+                                        alt=""
+                                    />
+                                    <strong className="me-auto">Dental care</strong>
+                                    <small>0 mins ago</small>
+                                </Toast.Header>
+                                <Toast.Body>verification mail sent!</Toast.Body>
+                            </Toast>
+                        </Col>
+
+                    </Row>
+                </div>
+            }
             <div className='auth-form-container '>
                 <div className='auth-form'>
                     <h1>Sign Up</h1>

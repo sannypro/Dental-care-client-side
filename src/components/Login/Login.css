@@ -48,6 +48,11 @@
     outline: none;
 }
 
+.forget {
+    cursor: pointer;
+    color: #1e90c2;
+}
+
 .auth-form-submit {
     width: 100%;
     height: 55px;

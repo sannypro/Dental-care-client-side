@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, useLocation, } from 'react-router-dom';
 import "./Login.css"
 import GoogleLogo from "../../Assets/Image/google.svg"
-import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../components/firebase.init';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Spinner } from 'react-bootstrap';
@@ -20,6 +20,7 @@ const Login = () => {
         loading,
         hookError,
     ] = useSignInWithEmailAndPassword(auth);
+    const [sendPasswordResetEmail, ResetSending, ResetError] = useSendPasswordResetEmail(auth);
     const handleEmailChange = e => {
         setEmail(e.target.value)
     };
@@ -43,6 +44,18 @@ const Login = () => {
             <Spinner className='text-center' animation="border" variant="primary" />
         </div>
     }
+    const handleReset = (e) => {
+        if (!email) {
+            setError("please Enter Email")
+            return
+        }
+        else {
+            setError("")
+        }
+        sendPasswordResetEmail(email)
+        alert("Reset mail sent")
+
+    }
     return (
         <div className='login-form-container'>
 
@@ -64,14 +77,19 @@ const Login = () => {
 
                     <p style={{ color: 'red' }}>{hookError?.message}</p>
                     <p style={{ color: 'red' }}>{goolgeError?.message}</p>
+                    <p style={{ color: 'red' }}>{error}</p>
                     <span>{loading}</span>
+
 
                     <button type='submit' className='auth-form-submit'>
                         Login
                     </button>
+                    <p onClick={handleReset} className='forget'>Forget password?</p>
                 </form>
+
                 <p className='redirect'>
-                    New to Tech Geeks?{" "}
+
+                    New to Dental care?{" "}
                     <span onClick={() => navigate("/signup")}>Create New Account</span>
                 </p>
                 <div className='horizontal-divider'>

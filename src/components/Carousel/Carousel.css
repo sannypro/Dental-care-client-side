@@ -4,10 +4,15 @@
     background-color: #08a0e4;
     width: 25%;
     color: white;
+    cursor: pointer;
 }
 
 .bg-img {
     background-image: url('/src/Assets/Image/bg-img.png');
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.carousel-text {
+    color: white;
 }
