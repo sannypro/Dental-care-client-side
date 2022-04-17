@@ -1,27 +1,56 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./Login.css"
 import GoogleLogo from "../../Assets/Image/google.svg"
+import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import auth from '../../components/firebase.init';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 const Login = () => {
-    const navigate = useNavigate()
+
+
+    const [signInWithGoogle, googleUser, googleLoading, goolgeError] = useSignInWithGoogle(auth);
+    const navigate = useNavigate();
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [error, setError] = useState('');
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        hookError,
+    ] = useSignInWithEmailAndPassword(auth);
+    const handleEmailChange = e => {
+        setEmail(e.target.value)
+    };
+    const hanldePassChange = e => {
+        setPassword(e.target.value)
+    };
+    const handleLogin = e => {
+        e.preventDefault()
+        signInWithEmailAndPassword(email, password)
+
+    }
     return (
         <div className='login-form-container'>
 
             <div className='auth-form' >
                 <h1 className='text-center'>  Please Login</h1>
-                <form>
+                <form onSubmit={handleLogin}>
                     <div className='input-field'>
                         <label htmlFor='email'>Email</label>
                         <div className='input-wrapper'>
-                            <input type='text' name='email' id='email' />
+                            <input onChange={handleEmailChange} type='text' name='email' id='email' />
                         </div>
                     </div>
                     <div className='input-field'>
                         <label htmlFor='password'>Password</label>
                         <div className='input-wrapper'>
-                            <input type='password' name='password' id='password' />
+                            <input onChange={hanldePassChange} type='password' name='password' id='password' />
                         </div>
                     </div>
+
+                    <p style={{ color: 'red' }}>{hookError}</p>
+                    <p style={{ color: 'red' }}>{goolgeError}</p>
                     <button type='submit' className='auth-form-submit'>
                         Login
                     </button>
@@ -36,7 +65,7 @@ const Login = () => {
                     <div className='line-right' />
                 </div>
                 <div className='input-wrapper d-flex justify-content-center'>
-                    <button className='google-auth '>
+                    <button onClick={() => signInWithGoogle()} className='google-auth '>
                         <img src={GoogleLogo} alt='' />
                         <p className='mt-2'> Continue with Google </p>
                     </button>
