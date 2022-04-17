@@ -71,8 +71,8 @@ const Signup = () => {
                             </div>
                         </div>
                         <p style={{ color: 'red' }}>{error}</p>
-                        <p style={{ color: 'red' }}>{hookError}</p>
-                        <p style={{ color: 'red' }}>{goolgeError}</p>
+                        <p style={{ color: 'red' }}>{hookError?.message}</p>
+                        <p style={{ color: 'red' }}>{goolgeError?.message}</p>
                         <button type='submit' className='auth-form-submit'>
                             Sign Up
                         </button>

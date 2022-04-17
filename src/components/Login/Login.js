@@ -5,6 +5,7 @@ import GoogleLogo from "../../Assets/Image/google.svg"
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../components/firebase.init';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Spinner } from 'react-bootstrap';
 const Login = () => {
 
 
@@ -37,6 +38,11 @@ const Login = () => {
         navigate(from, { replace: true })
 
     }
+    if (loading) {
+        <div className='d-flex justify-content-center align-items-center'>
+            <Spinner className='text-center' animation="border" variant="primary" />
+        </div>
+    }
     return (
         <div className='login-form-container'>
 
@@ -58,6 +64,8 @@ const Login = () => {
 
                     <p style={{ color: 'red' }}>{hookError?.message}</p>
                     <p style={{ color: 'red' }}>{goolgeError?.message}</p>
+                    <span>{loading}</span>
+
                     <button type='submit' className='auth-form-submit'>
                         Login
                     </button>
