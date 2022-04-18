@@ -16,3 +16,21 @@
 .carousel-text {
     color: white;
 }
+
+@media only screen and (max-width:688px) {
+    .carousel-card-container {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .carousel-card {
+        padding: 40px 60px;
+
+        background-color: #08a0e4;
+        width: 100%;
+        color: white;
+        cursor: pointer;
+        background-size: cover;
+    }
+}

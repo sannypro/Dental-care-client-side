@@ -11,7 +11,7 @@ const CheckOut = () => {
     const [thankYou, setThankYou] = useState('')
     const handleSubmit = (e) => {
         e.preventDefault()
-        setThankYou('Thank you for submit')
+        setThankYou('Thank you for Booking')
     }
     console.log(user);
     return (
@@ -63,7 +63,7 @@ const CheckOut = () => {
                         <Form.Check type="checkbox" label="Check me out" />
                     </Form.Group>
 
-                    <Button variant="primary" type="submit">
+                    <Button style={{ backgroundColor: '#1595d1' }} type="submit">
                         Submit
                     </Button>
                 </Form>

@@ -5,7 +5,9 @@ import GoogleLogo from "../../Assets/Image/google.svg"
 import { useSendPasswordResetEmail, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../components/firebase.init';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Spinner } from 'react-bootstrap';
+import { Col, Row, Spinner } from 'react-bootstrap';
+import { Toast } from 'bootstrap';
+import { async } from '@firebase/util';
 const Login = () => {
 
 
@@ -20,7 +22,7 @@ const Login = () => {
         loading,
         hookError,
     ] = useSignInWithEmailAndPassword(auth);
-    const [sendPasswordResetEmail, ResetSending, ResetError] = useSendPasswordResetEmail(auth);
+    const [sendPasswordResetEmail, resetSending, ResetError] = useSendPasswordResetEmail(auth);
     const handleEmailChange = e => {
         setEmail(e.target.value)
     };
@@ -44,7 +46,7 @@ const Login = () => {
             <Spinner className='text-center' animation="border" variant="primary" />
         </div>
     }
-    const handleReset = (e) => {
+    const handleReset = async (e) => {
         if (!email) {
             setError("please Enter Email")
             return
@@ -52,13 +54,23 @@ const Login = () => {
         else {
             setError("")
         }
-        sendPasswordResetEmail(email)
-        alert("Reset mail sent")
+        await sendPasswordResetEmail(email)
+
+        // alert("Reset mail sent")
 
     }
-    return (
-        <div className='login-form-container'>
+    const [showA, setShowA] = useState(true);
 
+
+    const toggleShowA = () => setShowA(!showA);
+
+
+    return (
+
+        <div className='login-form-container position-relative'>
+            {
+                resetSending && <div className='position-absolute top-50 start-50 translate-middle p-5 shadow bg-light'> <p>Reset mail sent</p> </div>
+            }
             <div className='auth-form' >
                 <h1 className='text-center'>  Please Login</h1>
                 <form onSubmit={handleLogin}>

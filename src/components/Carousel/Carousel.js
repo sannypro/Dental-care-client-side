@@ -15,16 +15,16 @@ const Carousel = () => {
                     <h3 >
                         Professional and highly trined dental staff
                     </h3>
-                    <p> From routine cleanings to orthodontic work, Professional Dental & Orthodontics has the technology and experience to take care of all your dental needs.</p>
+                    <p> From routine cleanings to orthodontic work, Professional Dental and Orthodontics has the technology and experience to take care of all your dental needs.</p>
                 </div>
                 <div className='col-lg-6 p-0'>
                     <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
                         <d iv className="carousel-inner p-0">
                             <div className="carousel-item active p-0">
-                                <img src={smileImg} className="d-block w-100" alt="..." />
+                                <img src={smileApple} className="d-block img-fluid" alt="..." />
                             </div>
                             <div className="carousel-item p-0">
-                                <img src={smileApple} className="d-block w-100" alt="..." />
+                                <img src={smileImg} className="d-block img-fluid" alt="..." />
                             </div>
 
                         </d>
@@ -32,7 +32,7 @@ const Carousel = () => {
                 </div>
             </section >
             <section>
-                <div className=' justify-content-center  row '>
+                <div className=' justify-content-center carousel-card-container row '>
                     <div className='carousel-card col-lg-12  d-flex flex-column justify-content-center align-items-center py-5'>
                         <FontAwesomeIcon style={{ height: '30px' }} icon={faTooth} />
                         <h5>Root canals</h5>

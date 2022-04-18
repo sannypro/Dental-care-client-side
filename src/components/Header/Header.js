@@ -22,8 +22,9 @@ const Header = () => {
                             <Link style={{ color: 'white' }} to="/" className='nav-link'>Home</Link>
                             <Link style={{ color: 'white' }} to="/blogs" className='nav-link'>Blogs</Link>
                             <Link style={{ color: 'white' }} to="/about" className='nav-link'>About</Link>
+                            <Link style={{ color: 'white' }} to="/checkout" className='nav-link'>checkOut</Link>
                             {
-                                user ? <button onClick={() => signOut(auth)}> sign out</button> : <Link style={{ color: 'white' }} to="/login" className='nav-link' >Login</Link>
+                                user ? <button className='btn btn-danger' onClick={() => signOut(auth)}> Sign out</button> : <Link style={{ color: 'white' }} to="/login" className='nav-link' >Login</Link>
                             }
 
 

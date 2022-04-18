@@ -23,7 +23,7 @@ const Services = () => {
 
                             </p>
                             <h4>Price: $60</h4>
-                            <Link to="checkout" className="btn btn-primary">Checkout</Link>
+                            <Link to="checkout" style={{ backgroundColor: '#1595d1', color: 'white' }} className="btn ">Checkout</Link>
                         </div>
                     </div>
                 </div>
@@ -36,7 +36,7 @@ const Services = () => {
                             <h5 className="card-title">Tooth Extraction</h5>
                             <p className="card-text">Tooth extraction is the removal of a tooth from its socket in the bone. If you are facing a tooth extraction, it can seem a little daunting and nerve-wracking. However, tooth extractions are a fairly common procedure.  You have nothing to fear as extractions are only preformed when they offer a great benefit to the patient.</p>
                             <h4>Price: $150</h4>
-                            <Link to="checkout" className="btn btn-primary">Checkout</Link>
+                            <Link style={{ backgroundColor: '#1595d1', color: 'white' }} to="checkout" className="btn btn-primary">Checkout</Link>
                         </div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@ const Services = () => {
                             <h5 className="card-title">Dental Emergency</h5>
                             <p className="card-text">The two most common periods in life to experience dental emergencies are during toddlerhood and adolescence due to environmental exploration and sports-related injuries. However, it is also common for adults to experience a dental emergency due to trauma, decay, or infection.Common Dental Emergencies</p>
                             <h4>Price: $112</h4>
-                            <Link to="checkout" className="btn btn-primary">Checkout</Link>
+                            <Link style={{ backgroundColor: '#1595d1', color: 'white' }} to="checkout" className="btn btn-primary">Checkout</Link>
                         </div>
                     </div>
                 </div>
