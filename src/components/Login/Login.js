@@ -58,7 +58,7 @@ const Login = () => {
         await sendPasswordResetEmail(email)
 
         setmyResetPass(true)
-        setTimeout(() => setmyResetPass(false), 3000);
+        setTimeout(() => setmyResetPass(false), 4000);
         console.log(myResetPass);
     }
 
