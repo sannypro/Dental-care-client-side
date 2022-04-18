@@ -1,3 +1,11 @@
 .blogs {
     height: 400px;
 }
+
+@media only screen and (max-width:688px) {
+
+
+    .blogs {
+        height: 700px;
+    }
+}
