@@ -5,7 +5,7 @@ import GoogleLogo from "../../Assets/Image/google.svg"
 import { useSendPasswordResetEmail, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../components/firebase.init';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Col, Row, Spinner } from 'react-bootstrap';
+import { Alert, Col, Row, Spinner } from 'react-bootstrap';
 import { Toast } from 'bootstrap';
 import { async } from '@firebase/util';
 const Login = () => {
@@ -59,17 +59,23 @@ const Login = () => {
         // alert("Reset mail sent")
 
     }
-    const [showA, setShowA] = useState(true);
 
 
-    const toggleShowA = () => setShowA(!showA);
-
-
+    const [show, setShow] = useState(false);
     return (
 
         <div className='login-form-container position-relative'>
             {
-                resetSending && <div className='position-absolute top-50 start-50 translate-middle p-5 shadow bg-light'> <p>Reset mail sent</p> </div>
+                resetSending && <Alert className='position-absolute top-50 start-50 translate-middle' variant="success">
+                    <Alert.Heading>Hey, nice to see you</Alert.Heading>
+                    <p>
+                        Reset Email successfuly Sent
+                    </p>
+                    <hr />
+                    <p className="mb-0">
+                        If you can not find it please also check spam box
+                    </p>
+                </Alert>
             }
             <div className='auth-form' >
                 <h1 className='text-center'>  Please Login</h1>
@@ -96,10 +102,10 @@ const Login = () => {
                     <button type='submit' className='auth-form-submit'>
                         Login
                     </button>
-                    <p onClick={handleReset} className='forget'>Forget password?</p>
+                    <span onClick={handleReset} className='forget'>Forget password?</span>
                 </form>
 
-                <p className='redirect'>
+                <p className='redirect mb-2'>
 
                     New to Dental care?{" "}
                     <span onClick={() => navigate("/signup")}>Create New Account</span>

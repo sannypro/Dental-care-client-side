@@ -53,12 +53,7 @@ const Signup = () => {
 
     const toggleShowA = () => setShowA(!showA);
 
-    let location = useLocation();
-    let from = location.state?.from?.pathname || "/";
-    if (user) {
-        navigate(from, { replace: true })
 
-    }
 
 
     return (
