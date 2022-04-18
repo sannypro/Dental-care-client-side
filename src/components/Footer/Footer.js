@@ -4,8 +4,8 @@ import './Footer.css'
 const Footer = () => {
     const date = new Date;
     return (
-        <div className='footer justify-content-center d-flex align-items-end'>
-            <p>Copyright © {date.getFullYear()} Dental Care. All Rights Reserved.</p>
+        <div className='footer justify-content-center position-sticky mt-2 d-flex align-items-end'>
+            <p className='text-center'>Copyright © {date.getFullYear()} Dental Care. All Rights Reserved.</p>
         </div>
     );
 };

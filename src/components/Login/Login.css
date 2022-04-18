@@ -59,7 +59,7 @@
     border: none;
     border-radius: 5px;
     font-size: 20px;
-    margin-top: 20px;
+    margin-top: 10px;
     cursor: pointer;
     color: white;
     background: #1b4388;
@@ -94,7 +94,7 @@
 }
 
 .redirect {
-    margin-top: 10px;
+    margin-top: 0;
     color: #1b4388;
 }
 
@@ -105,7 +105,7 @@
 }
 
 .horizontal-divider {
-    margin: 10px 0;
+    margin: 0;
     display: flex;
     align-items: center;
 }

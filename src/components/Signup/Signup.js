@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import GoogleLogo from '../../Assets/Image/google.svg'
 import auth from '../../components/firebase.init';
 import { useCreateUserWithEmailAndPassword, useSendEmailVerification } from 'react-firebase-hooks/auth';
@@ -49,10 +49,16 @@ const Signup = () => {
 
     }
     const [showA, setShowA] = useState(true);
-    const [showB, setShowB] = useState(true);
+
 
     const toggleShowA = () => setShowA(!showA);
-    const toggleShowB = () => setShowB(!showB);
+
+    let location = useLocation();
+    let from = location.state?.from?.pathname || "/";
+    if (user) {
+        navigate(from, { replace: true })
+
+    }
 
 
     return (
@@ -86,13 +92,13 @@ const Signup = () => {
                         <div className='input-field'>
                             <label htmlFor='email'>Email</label>
                             <div className='input-wrapper'>
-                                <input onChange={handleEmailChange} type='email' name='email' id='email' />
+                                <input onChange={handleEmailChange} type='email' name='email' id='email' required />
                             </div>
                         </div>
                         <div className='input-field'>
                             <label htmlFor='password'>Password</label>
                             <div className='input-wrapper'>
-                                <input onChange={hanldePassChange} type='password' name='password' id='password' />
+                                <input onChange={hanldePassChange} type='password' name='password' id='password' required />
                             </div>
                         </div>
                         <div className='input-field'>
@@ -103,7 +109,7 @@ const Signup = () => {
                                     type='password'
                                     name='confirmPassword'
                                     id='confirm-password'
-                                />
+                                    required />
                             </div>
                         </div>
                         <p style={{ color: 'red' }}>{error}</p>
