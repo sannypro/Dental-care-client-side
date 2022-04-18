@@ -1,6 +1,6 @@
 # Labaid Dental care
 
- [Live link](https://dental-care-bb52c.web.app/).
+ # [Live link](https://dental-care-bb52c.web.app/).
 
 - This Project is create by react
 - Also used React router for navigation
