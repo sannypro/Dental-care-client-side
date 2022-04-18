@@ -31,12 +31,12 @@ const CheckOut = () => {
 
                     <Form.Group className="mb-3" controlId="formGridAddress1">
                         <Form.Label>Address</Form.Label>
-                        <Form.Control required placeholder="1234 Main St" />
+                        <Form.Control required placeholder="" />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formGridAddress2">
                         <Form.Label>Address 2</Form.Label>
-                        <Form.Control placeholder="Apartment, studio, or floor" />
+                        <Form.Control placeholder="" />
                     </Form.Group>
 
                     <Row className="mb-3">

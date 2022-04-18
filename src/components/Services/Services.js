@@ -9,7 +9,7 @@ const Services = () => {
         <div className='mb-5'>
             <div className='text-center  mt-5'>
                 <small className='welcome-small'>Professional highly trained</small>
-                <h1>our services</h1>
+                <h1>My services</h1>
             </div>
             <div className='row container justify-content-center align-items g-3'>
 
