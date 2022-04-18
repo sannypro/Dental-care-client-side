@@ -22,6 +22,7 @@ const Login = () => {
         loading,
         hookError,
     ] = useSignInWithEmailAndPassword(auth);
+    const [myResetPass, setmyResetPass] = useState(false)
     const [sendPasswordResetEmail, resetSending, ResetError] = useSendPasswordResetEmail(auth);
     const handleEmailChange = e => {
         setEmail(e.target.value)
@@ -56,7 +57,7 @@ const Login = () => {
         }
         await sendPasswordResetEmail(email)
 
-        // alert("Reset mail sent")
+        setmyResetPass(true)
 
     }
 
@@ -66,7 +67,7 @@ const Login = () => {
 
         <div className='login-form-container position-relative'>
             {
-                resetSending && <Alert className='position-absolute top-50 start-50 translate-middle' variant="success">
+                myResetPass && <Alert className='position-absolute top-50 end-0 translate-middle-y' variant="success">
                     <Alert.Heading>Hey, nice to see you</Alert.Heading>
                     <p>
                         Reset Email successfuly Sent

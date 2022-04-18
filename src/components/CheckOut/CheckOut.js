@@ -15,11 +15,11 @@ const CheckOut = () => {
     }
     console.log(user);
     return (
-        <div className='container'>
+        <div className='container '>
             {
                 thankYou ? <div className='w-75 mx-auto mt-5 thank-you shadow border p-5 radius-3'> {thankYou}
                     <Link to="/"><button className='d-block btn btn-primary'>Back to home</button> </Link>
-                </div> : <Form onSubmit={handleSubmit}>
+                </div> : <Form className='check-out' onSubmit={handleSubmit}>
                     <Row className="mb-3 mt-3">
                         <Form.Group as={Col} controlId="formGridEmail">
                             <Form.Label>Email</Form.Label>

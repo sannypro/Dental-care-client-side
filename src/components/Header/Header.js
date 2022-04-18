@@ -15,7 +15,7 @@ const Header = () => {
 
             <Navbar className=' navbar-dark navbar-color sticky-top' expand="lg">
                 <Container>
-                    <Navbar.Brand  ><Link style={{ color: 'white' }} to="/" className='navbar-brand'>Labaid Dental Care</Link></Navbar.Brand>
+                    <Navbar.Brand  ><Link style={{ color: 'white' }} to="/" className='navbar-brand'>Sanny Dental Care</Link></Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
