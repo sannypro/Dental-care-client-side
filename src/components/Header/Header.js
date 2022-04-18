@@ -12,28 +12,7 @@ const Header = () => {
     return (
 
         <>
-            {/* <nav className="navbar navbar-expand-lg navbar-dark navbar-color sticky-top">
-                <div className="container-fluid">
-                    
-                    <button className="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div className="navbar-nav " aria-current="page">
-                           
-                            
-                            
-                            
-                            
 
-
-
-
-                        </div>
-
-                    </div>
-                </div>
-            </nav > */}
             <Navbar className=' navbar-dark navbar-color sticky-top' expand="lg">
                 <Container>
                     <Navbar.Brand  ><Link style={{ color: 'white' }} to="/" className='navbar-brand'>Labaid Dental Care</Link></Navbar.Brand>
