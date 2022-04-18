@@ -19,6 +19,17 @@ const Blogs = () => {
                         Google Analytics,Predictions,
                         Cloud Messaging. </p>
                 </div>
+                <div>
+                    <h5>Why are you using firebase? What other options do you have to implement authentication?</h5>
+                    <p>I am using firebase because it is easier to use. No need to code to authorize someone . if i use my own coded authorization then it would be week to hack . but firebase is google's sevice no one can hack it. I have another options like okta ,OneLogin.
+                        JumpCloud,
+                        Microsoft Azure Active Directory,
+                        CyberArk Identity ,
+                        Auth0,
+                        Rippling,
+                        SecureAuth Identity Platform,
+                        ForgeRock, </p>
+                </div>
             </div>
         </div>
     );

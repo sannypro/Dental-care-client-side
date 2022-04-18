@@ -1,4 +1,4 @@
-# Labaid Dental care
+# Sanny Dental care
 
  # [Live link](https://dental-care-bb52c.web.app/).
 
