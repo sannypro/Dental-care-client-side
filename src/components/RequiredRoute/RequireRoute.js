@@ -1,6 +1,8 @@
+import { sendEmailVerification } from 'firebase/auth';
 import React from 'react';
 import { Spinner } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
+
 import {
     Routes,
     Route,
@@ -10,6 +12,7 @@ import {
     Navigate,
     Outlet,
 } from "react-router-dom";
+import { toast } from 'react-toastify';
 import auth from '../firebase.init';
 
 const RequireRoute = ({ children }) => {
@@ -23,6 +26,17 @@ const RequireRoute = ({ children }) => {
     if (!user) {
 
         return <Navigate to="/login" state={{ from: location }} replace />;
+    }
+    if (!user.emailVerified) {
+        return <div className='text-center mt-5'>
+            <h3 className='text-danger'> your email is not verified</h3>
+            <button onClick={() => {
+                sendEmailVerification()
+                toast("verification mail sent")
+            }} className='btn btn-success'>
+                Please verify
+            </button>
+        </div>
     }
     return children;
 

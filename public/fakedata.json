@@ -1,0 +1,20 @@
+[
+    {
+        "serviceName": "Teeth whitenig",
+        "serviceDescription": "Very few people have naturally brilliantly white teeth as the color of a persons teeth is influenced by many different factors. Foods and drinks such as teas and coffees may stain teeth, in addition to age yellowing the teeth over time. Professional teeth whitening is the most powerful treatment you can get to lighten your teeth as much as possible.",
+        "img": "https://i.ibb.co/56byvb5/teeth-whitening.png",
+        "price": "60"
+    },
+    {
+        "serviceName": "Tooth Extraction",
+        "serviceDescription": "Tooth extraction is the removal of a tooth from its socket in the bone. If you are facing a tooth extraction, it can seem a little daunting and nerve-wracking. However, tooth extractions are a fairly common procedure.  You have nothing to fear as extractions are only preformed when they offer a great benefit to the patient.",
+        "img": "https://i.ibb.co/GWZzXTz/dental-deeling.png",
+        "price": "150"
+    },
+    {
+        "serviceName": "Dental Emergency",
+        "serviceDescription": "The two most common periods in life to experience dental emergencies are during toddlerhood and adolescence due to environmental exploration and sports-related injuries. However, it is also common for adults to experience a dental emergency due to trauma, decay, or infection.Common Dental Emergencies",
+        "img": "https://i.ibb.co/jZQkVW8/Tooth-ectraction.png",
+        "price": "112"
+    }
+]

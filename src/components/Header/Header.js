@@ -22,7 +22,7 @@ const Header = () => {
                             <Nav.Link > <Link style={{ color: 'white' }} to="/" className='nav-link'>Home</Link></Nav.Link>
                             <Nav.Link ><Link style={{ color: 'white' }} to="/blogs" className='nav-link'>Blogs</Link></Nav.Link>
                             <Nav.Link ><Link style={{ color: 'white' }} to="/about" className='nav-link'>About</Link></Nav.Link>
-                            <Nav.Link ><Link style={{ color: 'white' }} to="/checkout" className='nav-link'>checkOut</Link></Nav.Link>
+
                             {
                                 user ? <button className='btn btn-danger' onClick={() => signOut(auth)}> Sign out</button> : <Nav.Link ><Link style={{ color: 'white' }} to="/login" className='nav-link' >Login</Link></Nav.Link>
                             }
