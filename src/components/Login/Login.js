@@ -8,6 +8,7 @@ import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Alert, Col, Row, Spinner } from 'react-bootstrap';
 import { Toast } from 'bootstrap';
 import { async } from '@firebase/util';
+import axios from 'axios';
 const Login = () => {
 
 
@@ -35,11 +36,28 @@ const Login = () => {
         signInWithEmailAndPassword(email, password)
 
     }
+    const handleGoogleLogin = async (e) => {
+        await signInWithGoogle()
+    }
 
     let location = useLocation();
-    let from = location.state?.from?.pathname || "/";
-    if (user) {
+    let from = location?.state?.from?.pathname || "/";
+    if (user || googleUser) {
+        console.log(googleUser);
+        console.log(user);
+        const url = "http://localhost:5000/login";
+        axios.post(url, {
+            email: user?.user?.email || googleUser?.user?.email,
+        }).then(function (response) {
+            console.log(response);
+            localStorage.setItem("accessToken", response.data.token)
+        })
+            .catch(function (error) {
+                console.log(error);
+            });
+
         navigate(from, { replace: true })
+
 
     }
     if (loading) {
@@ -118,7 +136,7 @@ const Login = () => {
                     <div className='line-right' />
                 </div>
                 <div className='input-wrapper d-flex justify-content-center'>
-                    <button onClick={() => signInWithGoogle()} className='google-auth '>
+                    <button onClick={handleGoogleLogin} className='google-auth '>
                         <img src={GoogleLogo} alt='' />
                         <p className='mt-2'> Continue with Google </p>
                     </button>

@@ -12,11 +12,16 @@ const CheckOut = () => {
     const [thankYou, setThankYou] = useState('')
     const handleSubmit = (e) => {
         e.preventDefault()
+        const email = e.target.email.value;
+        const price = e.target.price.value;
+        const address = e.target.address.value;
+        const serviceName = e.target.serviceName.value;
+        console.log(email, price, address, serviceName);
         setThankYou('Thank you for Booking')
     }
     const [service, setService] = useState();
     useEffect(() => {
-        fetch(`http://localhost:5000/services/${serviceId}`)
+        fetch(`https://sleepy-brushlands-32068.herokuapp.com/services/${serviceId}`)
             .then(res => res.json())
             .then(data => setService(data))
     }, [])

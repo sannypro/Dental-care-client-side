@@ -4,17 +4,13 @@ import teethWhitening from '../../Assets/Image/teeth-whitening.png'
 import toothExtraction from '../../Assets/Image/Tooth-ectraction.png'
 import dentalFeeling from '../../Assets/Image/dental-deeling.png'
 import Service from './Service';
+import useServices from '../hooks/useServices';
 
 const Services = () => {
-    const [services, setServices] = useState([])
-    useEffect(() => {
-        fetch('http://localhost:5000/services')
-            .then(res => res.json())
-            .then(data => setServices(data))
-    }, [])
+
+    const [services] = useServices();
 
 
-    console.log(services);
     return (
         <div className='mb-5'>
             <div className='text-center  mt-5'>

@@ -21,8 +21,19 @@ const Header = () => {
                         <Nav className="me-auto">
                             <Nav.Link > <Link style={{ color: 'white' }} to="/" className='nav-link'>Home</Link></Nav.Link>
                             <Nav.Link ><Link style={{ color: 'white' }} to="/blogs" className='nav-link'>Blogs</Link></Nav.Link>
-                            <Nav.Link ><Link style={{ color: 'white' }} to="/about" className='nav-link'>About</Link></Nav.Link>
 
+                            <Nav.Link ><Link style={{ color: 'white' }} to="/about" className='nav-link'>About</Link></Nav.Link>
+                            {
+                                user && <>  <Nav.Link >
+                                    <Link style={{ color: 'white' }} to="/add-service" className='nav-link'>Add service</Link>
+                                </Nav.Link>
+                                    <Nav.Link >
+                                        <Link style={{ color: 'white' }} to="/manage" className='nav-link'>Manage </Link>
+                                    </Nav.Link>
+                                    <Nav.Link >
+                                        <Link style={{ color: 'white' }} to="/orders" className='nav-link'>orders </Link>
+                                    </Nav.Link></>
+                            }
                             {
                                 user ? <button className='btn btn-danger' onClick={() => signOut(auth)}> Sign out</button> : <Nav.Link ><Link style={{ color: 'white' }} to="/login" className='nav-link' >Login</Link></Nav.Link>
                             }
